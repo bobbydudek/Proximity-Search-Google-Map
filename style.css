@@ -1,0 +1,42 @@
+
+#locations-near-you-map {
+  width: 600px;
+  height: 420px;
+}
+.map-app {
+	display: flex;
+	align-items: flex-start;
+  z-index: 1000;
+  position: relative;
+}
+.location-near-you-box {
+    background-color: #f7f7f7;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #9bbbff;
+}
+.location-near-you-box p,
+.location-near-you-box a,
+.infoWindow p,
+.infoWindow a {
+    color: #333333!important;
+    margin: 5px;
+}
+.location-near-you-box h4 {
+	color: #091E4A!important;
+
+}
+.location-finder-container {
+    margin: 30px 0 0 30px;
+}
+input#maxRadius {
+  width: 50px;
+  margin-bottom: 10px;
+}
+input#userAddress {
+    margin-bottom: 10px;
+    width: 93%;
+}
+button#submitLocationSearch {
+    margin-left: 35%;
+}

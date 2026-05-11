@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Railevents Map</title>
+    <script src="locations.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="map-app-container">
+        <script>
+            function onSubmit(token) {
+
+                console.log('reCAPTCHA successful');
+                console.log(token);
+
+                document
+                    .getElementById('locationSearchForm')
+                    .submit();
+            }
+        </script>
+        <div class="map-app">
+            <div class="map-container" style="display: inline-block;">
+                <h2 id="location-search-alert">All Locations</h2>
+                <div id="locations-near-you-map"></div>
+                <em style="font-size: 11px; color: #ffffff;">If you have questions about a particular host railroad,
+                    location facilities, and/or want to purchase tickets, please contact that railroad directly.</em>
+            </div>
+            <div class="location-finder-container" style="display: inline-block;">
+                <h1>Search For A Train Near You</h1>
+                <div class="form-container">
+                    <form id="locationSearchForm" action="" method="POST">
+                        <label for="maxRadius">
+                            Find locations within
+                            <input name="maxRadius" id="maxRadius" type="number" value="250" min="1" />
+                            miles
+                        </label>
+                        <label for="userAddress">
+                            of
+                            <input name="userAddress" id="userAddress" type="text"
+                                placeholder="Your Address or ZIP Code" />
+                        </label>
+                        <button type="button" id="submitLocationSearch" class="g-recaptcha" data-sitekey="XXXXXXXXXXXXXXXXXXXX"
+                            data-callback="onSubmit" data-size="invisible">
+                            Search
+                        </button>
+                    </form>
+                </div>
+                <div style="margin: 10px;">
+                    <div id="locations-near-you"></div>
+                </div>
+            </div>
+            <script defer
+                src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=XXXXXXXXXXXXXXXXXXXX&callback=proximitySearchMap"></script>
+            <script src="scripts.js"></script>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        </div>
+    </div>
+</body>
+
+</html>
