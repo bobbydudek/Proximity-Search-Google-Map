@@ -3,24 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Railevents Map</title>
+    <title> Map</title>
+    <script src="jquery-min-3-3-1.js"></script>
     <script src="locations.js"></script>
-     <script src="jquery-min-3-3-1.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <div class="map-app-container">
         <script>
-            function onSubmit(token) {
-
-                console.log('reCAPTCHA successful');
-                console.log(token);
-
-                document
-                    .getElementById('locationSearchForm')
-                    .submit();
-            }
+            function onSubmit(token) { document.getElementById("submitLocationSearch").submit(); }
         </script>
         <div class="map-app">
             <div class="map-container" style="display: inline-block;">
@@ -43,7 +35,7 @@
                             <input name="userAddress" id="userAddress" type="text"
                                 placeholder="Your Address or ZIP Code" />
                         </label>
-                        <button type="button" id="submitLocationSearch" class="g-recaptcha" data-sitekey="XXXXXXXXXXXXXXXXXXXX"
+                         <button type="button" id="submitLocationSearch" class="g-recaptcha" data-sitekey="XXXXXXXXXXXXXXXXXXXX"
                             data-callback="onSubmit" data-size="invisible">
                             Search
                         </button>
@@ -53,8 +45,7 @@
                     <div id="locations-near-you"></div>
                 </div>
             </div>
-            <script defer
-                src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=XXXXXXXXXXXXXXXXXXXX&callback=proximitySearchMap"></script>
+            <script defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry,marker&key=XXXXXXXXXXXXXXXXXXXX&loading=async&callback=proximitySearchMap"></script>
             <script src="scripts.js"></script>
             <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         </div>
