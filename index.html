@@ -35,6 +35,7 @@
                             <input name="userAddress" id="userAddress" type="text"
                                 placeholder="Your Address or ZIP Code" />
                         </label>
+                        <!-- REPLACE THE DATA-SITEKEY VALUE BELOW WITH YOUR OWN SITE KEY FROM GOOGLE RECAPTCHA -->
                          <button type="button" id="submitLocationSearch" class="g-recaptcha" data-sitekey="XXXXXXXXXXXXXXXXXXXX"
                             data-callback="onSubmit" data-size="invisible">
                             Search
@@ -45,6 +46,7 @@
                     <div id="locations-near-you"></div>
                 </div>
             </div>
+                <!-- REPLACE THE VALUE OF "key" BELOW WITH YOUR OWN API KEY FROM GOOGLE MAPS -->
             <script defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry,marker&key=XXXXXXXXXXXXXXXXXXXX&loading=async&callback=proximitySearchMap"></script>
             <script src="scripts.js"></script>
             <script src="https://www.google.com/recaptcha/api.js" async defer></script>
